@@ -1,0 +1,17 @@
+.DATA
+A:.BYTE 10,20,30,40,50
+B:.BYTE 0,0,0,0,0
+
+.TEXT
+LDR R1,=A
+LDR R2,=B
+
+MOV R5,#1	;counter
+L1:LDRB R3,[R1]
+STRB R3,[R2]
+ADD R1,R1,#1
+ADD R2,R2,#4
+ADD R5,R5,#1
+CMP R5,#6
+BNE L1
+SWI 0X011	;software interrupt
