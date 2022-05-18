@@ -9,7 +9,7 @@ LDR R2,=B
 MOV R5,#1	;counter
  L1:LDR R3,[R1]
 STR R3,[R2]
-ADD R1,R1,#2
+ADD R1,R1,#4
 ADD R2,R2,#4
 ADD R5,R5,#1
 CMP R5,#6
